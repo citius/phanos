@@ -29,7 +29,7 @@ try {
     });
   phanos.run(parsedOpts, function (err) {
     if (err) console.log(err.message);
-    else console.log("\rTimes is up. All Phanos Walkers are killed.");
+    else console.log("\nTimes is up. All Phanos Walkers are killed.");
   });
 } catch (err) {
   console.error(err.message);
