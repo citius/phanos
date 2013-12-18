@@ -5,7 +5,8 @@ Requirements
 ------------
 
 For working this tool you needs of installed PhantomJs browser.
-If it not installed you can run this script:
+PhantomJs will be uploaded automatic until installing.
+But If you want installed globally PhantomJs you can run:
 `$ sudo bin/install_linux_phantomjs`
 
 Options
