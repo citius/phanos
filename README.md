@@ -1,6 +1,11 @@
 README
 ======
 
+Install
+-------
+
+`$ npm install -g phanos`
+
 Requirements
 ------------
 
