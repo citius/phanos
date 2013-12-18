@@ -1,0 +1,29 @@
+{
+  "name": "phanos",
+  "version": "0.0.1",
+  "description": "Simple human like stress test tool.\nThis tools doesn't provide any stat info, or special logging functionality.\n This tool just walking on yours site as true user.",
+  "main": "lib/phanos",
+  "bin": {
+    "phanos": "bin/phanos"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:citius/phanos.git"
+  },
+  "keywords": [
+    "stress",
+    "test",
+    "site crawler",
+    "spider"
+  ],
+  "author": "Dmitry Taynov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/citius/phanos/issues"
+  },
+  "homepage": "https://github.com/citius/phanos",
+  "dependencies": {
+    "phantomjs": "*",
+    "nopt": "*"
+  }
+}

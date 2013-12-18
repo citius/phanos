@@ -1,0 +1,13 @@
+#!/bin/bash
+# Run with SUDO
+echo "Start"
+phantom_version=`uname -i`
+echo "Yours Phantom for $phantom_version system"
+cd /usr/local/share
+wget http://phantomjs.googlecode.com/files/phantomjs-1.9.2-linux-$phantom_version.tar.bz2
+tar xjf phantomjs-1.9.2-linux-x86_64.tar.bz2
+sudo ln -s /usr/local/share/phantomjs-1.9.2-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs
+sudo ln -s /usr/local/share/phantomjs-1.9.2-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
+sudo ln -s /usr/local/share/phantomjs-1.9.2-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
+echo "Finished"
+phantomjs -v

@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+var phanos = require('../lib/phanos')
+  , nopt = require('nopt')
+  , loadedPages = 0
+  , opts = {
+      "url": String,
+      "time": [ Number, 60 ],
+      "depth": [ Number, 1 ],
+      "walkers": [ Number, 1 ]
+    }
+  , shortOpts = {
+      "w": [ '--walkers' ],
+      "t": [ '--time' ],
+      "u": [ '--url' ]
+    }
+  , parsedOpts = nopt(opts, shortOpts, process.argv);
+  ;
+
+delete parsedOpts.argv;
+
+try {
+  phanos.client
+    .on('visited', function (url, stdout) {
+      loadedPages++;
+      process.stdout.write('\rNumber of loaded pages ' + loadedPages + ", last page address " + url);
+    })
+    .on('killwalker', function () {
+      console.log("Murder of runaway walker...");
+    });
+  phanos.run(parsedOpts, function (err) {
+    if (err) console.log(err.message);
+    else console.log("\rTimes is up. All Phanos Walkers are killed.");
+  });
+} catch (err) {
+  console.error(err.message);
+}
