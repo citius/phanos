@@ -6,7 +6,8 @@ var phanos = require('../lib/phanos')
       "url": String,
       "time": [ Number, 60 ],
       "depth": [ Number, 1 ],
-      "walkers": [ Number, 1 ]
+      "walkers": [ Number, 1 ],
+      "rush": [ Boolean, false ]
     }
   , shortOpts = {
       "w": [ '--walkers' ],
