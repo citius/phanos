@@ -7,7 +7,8 @@ var phanos = require('../lib/phanos')
       "time": [ Number, 60 ],
       "depth": [ Number, 1 ],
       "walkers": [ Number, 1 ],
-      "rush": [ Boolean, false ]
+      "rush": [ Boolean, false ],
+      "sitemap": String
     }
   , shortOpts = {
       "w": [ '--walkers' ],
