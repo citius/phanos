@@ -11,8 +11,15 @@
     "url": "git@github.com:citius/phanos.git"
   },
   "keywords": [
+    "stresstest",
+    "stress-test",
     "stress",
+    "stresslogs",
+    "stress-logs",
+    "load-test",
+    "load",
     "test",
+    "performance",
     "site crawler",
     "spider"
   ],
