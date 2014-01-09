@@ -10,17 +10,25 @@ var phanos = require('../lib/phanos')
       "rush": [ Boolean, false ],
       "sitemap": [ String, null ],
       // For user agents
-      "as": [ String, null]
+      "as": [ String, null],
+      "verbose": [ Boolean, false ]
     }
   , shortOpts = {
       "w": [ '--walkers' ],
       "t": [ '--time' ],
-      "u": [ '--url' ]
+      "u": [ '--url' ],
+      "v": [ '--verbose' ]
     }
   , parsedOpts = nopt(opts, shortOpts, process.argv);
   ;
 
 delete parsedOpts.argv;
+
+function onError(err) {
+  if (parsedOpts.verbose) {
+    console.log("\n" + err.message);
+  }
+}
 
 try {
   phanos.client
@@ -30,7 +38,8 @@ try {
     })
     .on('killwalker', function () {
       console.log("Murder of runaway walker...");
-    });
+    })
+    .on('procerror', onError);
   phanos.run(parsedOpts, function (err) {
     if (err) console.log(err.message);
     else console.log("\nTimes is up. All Phanos Walkers are killed.");
