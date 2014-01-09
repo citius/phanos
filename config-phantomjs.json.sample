@@ -1,0 +1,8 @@
+{
+  "cookieFile": "./cookies.txt",
+  "discCache": false,
+  "ignoreSslErrors": true,
+  "maxDiskCacheSize": 30720,
+  "loadImages": false,
+  "webSecurity": false
+}
