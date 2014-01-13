@@ -1,6 +1,6 @@
 {
   "name": "phanos",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Simple human like stress test tool.\nThis tools doesn't provide any stat info, or special logging functionality.\n This tool just walking on yours site as true user.",
   "main": "lib/phanos",
   "bin": {
