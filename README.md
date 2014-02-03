@@ -26,6 +26,7 @@ This tool supports three option parameter:
 5. --sitemap - Sitemap url, you provided then Phanos automatic load and parse sitemap file, will found location urls and start crawl.
 Supports file in local file system, and URL address. Also phanos understand Sitemapindex files. If set then URL parameter will be ignored.
 6. --as - You can set User Agent using this parameter, also Phano have predefined aliases: Google, Bing, Yandex. (in progress!)
+7. --deep - Turn on link collector. Link collector find and add to scan links on a visited page.
 
 Examples
 --------
@@ -34,3 +35,4 @@ Examples
 - `$ phanos -u=http://www.google.com/ -t=3600` - Single walker will walk 1 hour (3600 seconds)
 - `$ phanos -u=http://www.google.com/ -w=20` - 20 walkers will walk 30 seconds.
 - `$ phanos -sitemap=http://www.google.com/sitemapindex.xml -w=10 -t=3600` - 10 walkers will walk 1 hour at found locations url in sitemapindex.
+- `$ phanos -u=http://www.smth.com/ -w=10 -t=300 --deep` - 10 walkers will walk 5 minutes and all found links will add to scan options dynamically.

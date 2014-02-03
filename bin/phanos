@@ -11,13 +11,15 @@ var phanos = require('../lib/phanos')
       "sitemap": [ String, null ],
       // For user agents
       "as": [ String, null],
-      "verbose": [ Boolean, false ]
+      "verbose": [ Boolean, false ],
+      "deep": [ Boolean, false ]
     }
   , shortOpts = {
       "w": [ '--walkers' ],
       "t": [ '--time' ],
       "u": [ '--url' ],
-      "v": [ '--verbose' ]
+      "v": [ '--verbose' ],
+      "d": [ '--deep' ]
     }
   , parsedOpts = nopt(opts, shortOpts, process.argv);
   ;
@@ -32,7 +34,7 @@ function onError(err) {
 
 try {
   phanos.client
-    .on('visited', function (url, stdout) {
+    .on('visited', function (url, page) {
       loadedPages++;
       process.stdout.write('\rNumber of loaded pages ' + loadedPages + ", last page address " + url);
     })
